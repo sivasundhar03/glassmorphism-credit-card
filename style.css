@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1c1c25;
+}
+.container:before{
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    right: 60%;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(#A770EF,#CF8BF3,#FDB99B);
+    border-radius: 50%;
+}
+.container:after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 60%;
+    width:600px;
+    height: 600px;
+    background: linear-gradient(#3e5151,#decba4);
+    border-radius: 50%;
+    
+}
+.card{
+    position: relative;
+    width: 508px;
+    height: 314px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    z-index: 10;
+}
+.card .face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 05);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .05);
+    transform-style: preserve-3d;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    backface-visibility: hidden;
+}
+.card:hover .face.front{
+    transform: rotateY(180deg);
+}
+.card .face.back{
+    transform: rotateY(180deg);
+}
+.card:hover .face.back{
+    transform: rotateY(360deg);
+}
+.card .face.front:before{
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: .5;
+}
+.card .face.front:after{
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: .7;
+}
+.card .face.front .credit{
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    color: #FFF;
+    font-weight: 500;
+}
+.card .face.front .bank{
+    position: absolute;
+    right: 40px;
+    top: 25px;
+    color: #FFF;
+    font-weight: 500;
+    font-size: 24px;
+    font-style: italic;
+}
+.card .face.front .chip{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    max-width: 64px;
+} 
+.card .face.front .code{
+    position: absolute;
+    bottom: 130px;
+    left: 50px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 18px;
+    text-shadow: 0 2px 1.5px #000005;
+    font-family: 'Orbitron', sans-serif;
+} 
+.card .face.front .valid{
+    position: absolute;
+    left: 50px; 
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-weight: 300;
+    text-align: right;
+    line-height: 16px;
+}
+.card .face.front .valid span:last-child{
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+}
+.card .face.front .card-holder{
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 300;
+}
+.card .face.back .bar-1
+{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    top: 40px;
+    background: #000;
+}
+.card .face.back .text{
+    position: absolute;
+    top: 120px;
+    left: 30px;
+}
+.card .face.back .text h5{
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.card .face.back .text .bar-2{
+    position: relative;
+    width: 390px;
+    height: 40px;
+    background: #FFFFFF;
+    margin-top: 5px;
+
+}
+.card .face.back .text .cvv{
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background: #ccc;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    left: 385px;
+    top: -35px;
+}
+.card .face.back .content{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    font-size: 10px;
+    color: #fff;
+    line-height: 18px;
+}
